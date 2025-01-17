@@ -32,17 +32,20 @@ while(ch!=4):
         print("total = ",sum)
     if(ch==3):
         pd=pandas.read_csv("expenses.csv")
+        print("1.catogorey vs amonut")
+        print("2.date vs amount")
+        x=input("enter the type")
         
-        show=pd.groupby("category")["amount"].sum()
-        show.plot(kind="bar", figsize=(8, 6), title="Expenses by Category")
-        plt.xlabel("Category")
-        plt.ylabel("Total Amount")
-        plt.show()
-        
-        show1=pd.groupby("date")["amount"].sum()
-        show1.plot(kind="bar", figsize=(8, 6), title="Expenses by date")
-        plt.xlabel("date")
-        plt.ylabel("Total Amount")
-        plt.show()
-        
-        
+        if(x=="1"):
+
+         show=pd.groupby("category")["amount"].sum()
+         show.plot(kind="bar", figsize=(8, 6), title="Expenses by Category")
+         plt.xlabel("Category")
+         plt.ylabel("Total Amount")
+         plt.show()
+        if(x=="2"):
+         show1=pd.groupby("date")["amount"].sum()
+         show1.plot(kind="bar", figsize=(8, 6), title="Expenses by date")
+         plt.xlabel("date")
+         plt.ylabel("Total Amount")
+         plt.show()
